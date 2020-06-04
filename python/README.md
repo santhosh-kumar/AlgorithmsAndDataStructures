@@ -18,7 +18,7 @@ Pre-requisites
 
 Usage
 ------------
-1. Import the python project in pycharm edu
+1. Import the python folder in pycharm edu
 2. Set the interpreter (python 3.7)
 3. Run the tests
 
