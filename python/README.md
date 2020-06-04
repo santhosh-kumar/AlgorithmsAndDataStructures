@@ -1,4 +1,3 @@
-Leet Code Problems (Python)
 
 Project Structure
 ------------
