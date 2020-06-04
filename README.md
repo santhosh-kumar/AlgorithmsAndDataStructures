@@ -1,5 +1,11 @@
 Algorithms and Data Structures
 
+
+Usage
+------------
+1) Follow the README.md in the python folder.
+2) For using PyCharm Edu, import just the python folder.
+
 ### Contact ###
 [1] Santhoshkumar Sunderrajan( santhoshkumar.sunderrajan@gmail.com)
 
