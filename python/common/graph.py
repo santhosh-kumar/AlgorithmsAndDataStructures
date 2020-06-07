@@ -61,7 +61,7 @@ class Graph:
         Raises:
             None
         """
-        self.graph = defaultdict(list)
+        self.graph = defaultdict(dict)
 
     def get_vertices_count(self):
         """Get the number of vertices
@@ -82,19 +82,20 @@ class Graph:
         Args:
 
         Returns:
-            integer
+            list
 
         Raises:
             None
         """
-        return self.graph.keys()
+        return list(self.graph.keys())
 
-    def add_edge(self, v, w):
+    def add_edge(self, u, v, weight=None):
         """Add an edge
 
         Args:
-            v: first vertex
-            w: second vertex
+            u: first vertex
+            v: second vertex
+            weight: weight of the node (optional)
 
         Returns:
             None
@@ -103,6 +104,41 @@ class Graph:
             None
         """
         raise NotImplementedError
+
+    def get_adjacency_list(self):
+        """Returns the adjacency list (weight, u, v)
+
+        Args:
+
+        Returns:
+            list(tuple)
+
+        Raises:
+            None
+        """
+        adjacency_list = []
+        for u in self.get_vertices():
+            for v in self.graph[u].keys():
+                adjacency_list.append((self.graph[u][v], u, v))
+
+        return adjacency_list
+
+    def get_adjacency_list_for_vertex(self, u):
+        """Returns the adjacency list (weight, u, v) for the vertex u
+
+        Args:
+
+        Returns:
+            list(tuple)
+
+        Raises:
+            None
+        """
+        adjacency_list = []
+        for v in self.graph[u].keys():
+            adjacency_list.append((self.graph[u][v], u, v))
+
+        return adjacency_list
 
     @staticmethod
     def depth_first_traversal(graph_node, vertex_list):
@@ -162,21 +198,16 @@ class UndirectedGraph(Graph):
     Encapsulates Undirected Graph
     """
 
-    def add_edge(self, v, w):
+    def add_edge(self, u, v, weight=None):
         """Add an edge
 
         Args:
-            v: first vertex
-            w: second vertex
-
-        Returns:
-            None
-
-        Raises:
-            None
+            u: first vertex
+            v: second vertex
+            weight: weight of the node (optional)
         """
-        self.graph[v].append(w)
-        self.graph[w].append(v)
+        self.graph[u][v] = weight
+        self.graph[v][u] = weight
 
     def is_cyclic(self, vertex, visited_dict, parent):
         """ Check if the given node is part of a cycle

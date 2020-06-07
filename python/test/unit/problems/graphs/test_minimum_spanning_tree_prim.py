@@ -1,21 +1,22 @@
 """
-Unit Test for find_connected_components
+Unit Test for minimum_spanning_tree_prim
 """
 from unittest import TestCase
 
-from problems.graphs.minimum_spanning_tree_kruskal import MinimumSpanningTreeKruskalsAlgorithm
 from common.graph import UndirectedGraph
+from problems.graphs.minimum_spanning_tree_prim import MinimumSpanningTreePrimsAlgorithm
 
-class TestMinimumSpanningTreeKruskalsAlgorithm(TestCase):
+
+class TestMinimumSpanningTreePrimsAlgorithm(TestCase):
     """
-    Unit test for MinimumSpanningTreeKruskalsAlgorithm
+    Unit test for MinimumSpanningTreePrimsAlgorithm
     """
 
     def test_solve(self):
         """Test solve
 
         Args:
-            self: TestMinimumSpanningTreeKruskalsAlgorithm
+            self: TestMinimumSpanningTreePrimsAlgorithm
 
         Returns:
             None
@@ -39,10 +40,10 @@ class TestMinimumSpanningTreeKruskalsAlgorithm(TestCase):
         input_graph.add_edge(2, 4, 3)
         input_graph.add_edge(4, 5, 2)
 
-        min_spanning_tree_problem = MinimumSpanningTreeKruskalsAlgorithm(input_graph)
+        min_spanning_tree_problem = MinimumSpanningTreePrimsAlgorithm(input_graph)
 
         # When
         result = min_spanning_tree_problem.solve()
 
         # Then
-        self.assertEqual(result, [(1, 2, 3), (2, 0, 3), (2, 4, 5), (3, 1, 2), (3, 2, 4)])
+        self.assertEqual(result, [(2, 0, 3), (1, 3, 2), (3, 2, 1), (3, 2, 4), (2, 4, 5)])

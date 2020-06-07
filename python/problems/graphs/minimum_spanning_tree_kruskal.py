@@ -21,12 +21,11 @@ class MinimumSpanningTreeKruskalsAlgorithm(Problem):
     """
     PROBLEM_NAME = "MinimumSpanningTreeKruskalsAlgorithm"
 
-    def __init__(self, number_vertices, adjacency_list):
+    def __init__(self, input_graph):
         """Compute Minimum Spanning Tree (Kruskal's Algorithm)
 
         Args:
-            number_vertices: Number of vertices
-            adjacency_list: Adjacency List
+            input_graph: input graph
 
         Returns:
             None
@@ -35,13 +34,12 @@ class MinimumSpanningTreeKruskalsAlgorithm(Problem):
             None
         """
         super().__init__(self.PROBLEM_NAME)
-        self.number_vertices = number_vertices
-        self.adjacency_list = adjacency_list
+        self.input_graph = input_graph
 
     def solve(self):
         """Solve the problem
 
-        Note:
+        Note: O(E logE) solution sorts the edges in O(log E). Then iterates the edges.
 
         Args:
 
@@ -53,26 +51,29 @@ class MinimumSpanningTreeKruskalsAlgorithm(Problem):
         """
         print("Solving {} problem ...".format(self.PROBLEM_NAME))
 
+        number_vertices = self.input_graph.get_vertices_count()
+
         result = []
 
         sorted_edges_index = 0
         edge_index = 0
 
         # sort the items based on the weight
-        self.adjacency_list = sorted(self.adjacency_list, key=lambda item: item[2])
+        adjacency_list = self.input_graph.get_adjacency_list()
+        adjacency_list = sorted(adjacency_list, key=lambda item: item[0])
 
-        parents = [i for i in range(self.number_vertices)]
+        parents = [i for i in range(number_vertices)]
         union_find = UnionFind(parents)
 
-        while edge_index < self.number_vertices - 1:
-            vertex1, vertex2, weight = self.adjacency_list[sorted_edges_index]
+        while edge_index < number_vertices - 1:
+            weight, vertex1, vertex2 = adjacency_list[sorted_edges_index]
 
             vertex1_parent_index = union_find.find(vertex1)
             vertex2_parent_index = union_find.find(vertex2)
 
             if vertex1_parent_index != vertex2_parent_index:
                 edge_index = edge_index + 1
-                result.append(self.adjacency_list[sorted_edges_index])
+                result.append(adjacency_list[sorted_edges_index])
                 union_find.union(vertex1, vertex2)
 
             sorted_edges_index = sorted_edges_index + 1

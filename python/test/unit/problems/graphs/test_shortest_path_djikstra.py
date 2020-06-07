@@ -1,21 +1,22 @@
 """
-Unit Test for find_connected_components
+Unit Test for shortest_path_djikstra
 """
 from unittest import TestCase
 
-from problems.graphs.minimum_spanning_tree_kruskal import MinimumSpanningTreeKruskalsAlgorithm
 from common.graph import UndirectedGraph
+from problems.graphs.shortest_path_djikstra import ShortestPathDjikstrasAlgorithm
 
-class TestMinimumSpanningTreeKruskalsAlgorithm(TestCase):
+
+class TestShortestPathDjikstrasAlgorithm(TestCase):
     """
-    Unit test for MinimumSpanningTreeKruskalsAlgorithm
+    Unit test for ShortestPathDjikstrasAlgorithm
     """
 
     def test_solve(self):
         """Test solve
 
         Args:
-            self: TestMinimumSpanningTreeKruskalsAlgorithm
+            self: TestShortestPathDjikstrasAlgorithm
 
         Returns:
             None
@@ -39,10 +40,10 @@ class TestMinimumSpanningTreeKruskalsAlgorithm(TestCase):
         input_graph.add_edge(2, 4, 3)
         input_graph.add_edge(4, 5, 2)
 
-        min_spanning_tree_problem = MinimumSpanningTreeKruskalsAlgorithm(input_graph)
+        shortest_path_problem = ShortestPathDjikstrasAlgorithm(input_graph)
 
         # When
-        result = min_spanning_tree_problem.solve()
+        result = shortest_path_problem.solve()
 
         # Then
-        self.assertEqual(result, [(1, 2, 3), (2, 0, 3), (2, 4, 5), (3, 1, 2), (3, 2, 4)])
+        self.assertEqual(result, {0: 0, 1: 4, 2: 3, 3: 2, 4: 6, 5: 8})

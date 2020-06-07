@@ -8,17 +8,17 @@ class UnionFind:
     An implementation of union find.
     """
 
-    def __init__(self, data_list):
+    def __init__(self, parent_list):
         """init union find
         Args:
-            data_list: List of items
+            parent_list: List of parent indices for the items
         Returns:
             None
 
         Raises:
             None
         """
-        self.data_list = data_list
+        self.parent_list = parent_list
 
     def find(self, i):
         """find
@@ -32,10 +32,10 @@ class UnionFind:
             None
         """
         # if the element is not its own parent
-        if i != self.data_list[i]:
-            self.data_list[i] = self.find(self.data_list[i])
+        if i != self.parent_list[i]:
+            self.parent_list[i] = self.find(self.parent_list[i])
 
-        return self.data_list[i]
+        return self.parent_list[i]
 
     def union(self, i, j):
         """union
@@ -54,7 +54,7 @@ class UnionFind:
 
         # if they have different parents, connect them.
         if pi != pj:
-            self.data_list[pi] = pj
+            self.parent_list[pi] = pj
 
     def is_connected(self, i, j):
         """Check if connected
