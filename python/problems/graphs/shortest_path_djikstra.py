@@ -32,12 +32,13 @@ class ShortestPathDjikstrasAlgorithm(Problem):
     def solve(self):
         """Solve the problem
 
-        Note:
+        Note: O(E log V) solution works using a heap for the adjacent nodes and performing a greeding approach for choosing
+        the next node.
 
         Args:
 
         Returns:
-            list(tuple)
+            dict
 
         Raises:
             None

@@ -193,6 +193,51 @@ class Graph:
                     nodes_queue.append(neighbor_node)
 
 
+class DirectedGraph(Graph):
+    """
+    Encapsulates DirectedGraph Graph
+    """
+
+    def add_edge(self, u, v, weight=None):
+        """Add an edge
+
+        Args:
+            u: first vertex
+            v: second vertex
+            weight: weight of the node (optional)
+
+        Returns:
+            None
+
+        Raises:
+            None
+        """
+        self.graph[u][v] = weight
+
+    def topological_sort_util(self, vertex, visited_list, sort_list):
+        """Topological sort
+
+        Args:
+            vertex: under consideration
+            visited_list: list of vertices that are visited
+            sort_list: list of sorted vertices
+
+        Returns:
+            None
+
+        Raises:
+            None
+        """
+        # Mark the code node as visited
+        visited_list[vertex] = True
+
+        for neighbor_vertex in self.graph[vertex]:
+            if not visited_list[neighbor_vertex]:
+                self.topological_sort_util(neighbor_vertex, visited_list, sort_list)
+
+        sort_list.insert(0, vertex)
+
+
 class UndirectedGraph(Graph):
     """
     Encapsulates Undirected Graph
