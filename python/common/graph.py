@@ -284,3 +284,58 @@ class UndirectedGraph(Graph):
                 return True
 
         return False
+
+    def bridge_util(self, vertex, visited_list, parents_list, discovery_times, low, traversal_counter, bridges):
+        """ Utility to find bridges
+
+        Args:
+            vertex: vertex label
+            visited_list: list of vertices to mark if they are visited or not
+            parents_list: parents of the vertices
+            discovery_times: Discovery time of the vertex
+            low: Low values
+            traversal_counter: Counter for graph traversal
+            bridges: list of edges
+
+        Returns:
+            None
+
+        Raises:
+            None
+        """
+        # mark the current nodes as visited
+        visited_list[vertex] = True
+
+        # initialize the discovery time and low value
+        discovery_times[vertex] = traversal_counter
+        low[vertex] = traversal_counter
+
+        traversal_counter = traversal_counter + 1
+
+        # iterate through neighbors of the current vertex
+        for neighbor_vertex in self.graph[vertex]:
+            # if the neighbor vertex is not visited
+            if not visited_list[neighbor_vertex]:
+                parents_list[neighbor_vertex] = vertex
+
+                self.bridge_util(neighbor_vertex,
+                                 visited_list,
+                                 parents_list,
+                                 discovery_times,
+                                 low,
+                                 traversal_counter,
+                                 bridges)
+
+                # Check if the subtree rooted with v has a connection to
+                # one of the ancestors of u
+                low[vertex] = min(low[vertex], low[neighbor_vertex])
+
+                ''' If the lowest vertex reachable from subtree 
+                under neighbor_vertex is below vertex in DFS tree, then the edge is 
+                a bridge'''
+                if low[neighbor_vertex] > discovery_times[vertex]:
+                    bridges.append((vertex, neighbor_vertex))
+
+            elif neighbor_vertex != parents_list[vertex]:
+                # Update low value of vertex for parent function calls
+                low[vertex] = min(low[vertex], discovery_times[neighbor_vertex])
