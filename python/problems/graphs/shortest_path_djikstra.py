@@ -18,7 +18,7 @@ class ShortestPathDjikstrasAlgorithm(Problem):
         """Compute Shortest Path (Djikstra's Algorithm)
 
         Args:
-            input_graph: Graph for which to find the minimum spanning tree
+            input_graph: Graph for which to find the shortest paths
 
         Returns:
             None

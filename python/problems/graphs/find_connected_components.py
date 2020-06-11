@@ -53,11 +53,11 @@ class FindConnectedComponents(Problem):
         """
         print("Solving {} problem ...".format(self.PROBLEM_NAME))
 
-        data_list = [i for i in range(self.number_vertices)]
+        parent_list = [i for i in range(self.number_vertices)]
 
-        union_find = UnionFind(data_list)
+        union_find = UnionFind(parent_list)
 
         for i, j in self.adjacency_list:
             union_find.union(i, j)
 
-        return len(set(data_list))
+        return len(set(parent_list))
