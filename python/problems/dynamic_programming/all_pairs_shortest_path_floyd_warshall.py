@@ -38,7 +38,7 @@ class AllPairsShortestPathsFloydWarshallAlgorithm(Problem):
         Args:
 
         Returns:
-            dict
+            array[array]
 
         Raises:
             None
