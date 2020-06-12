@@ -48,7 +48,9 @@ class BinaryTreeUpsideDown(Problem):
 
     def solve(self):
         """Solve the problem
-            O(n) (runtime) and O(1) space complexity.
+
+        Note: O(n) (runtime) and O(1) space complexity.
+
         Args:
 
         Returns:

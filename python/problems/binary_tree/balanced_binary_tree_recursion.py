@@ -32,8 +32,8 @@ class BalancedBinaryTreeRecursion(Problem):
 
     def solve(self):
         """Solve the problem
-            Note: O(n) (runtime) and O(n) (stack space) solution works by checking is the subtree is balanced at each step.
-            Otherwise, -1 is returned.
+        Note: O(n) (runtime) and O(n) (stack space) solution works by checking is the subtree is balanced at each step.
+        Otherwise, -1 is returned.
 
         Args:
 
@@ -44,13 +44,14 @@ class BalancedBinaryTreeRecursion(Problem):
             None
         """
         print("Solving {} problem ...".format(self.PROBLEM_NAME))
-
         return self.is_balanced(self.root_node)
 
     def is_balanced(self, root):
         """Check if the binary tree is balanced
+
         Args:
             root: node of the tree
+
         Returns:
             boolean
 
@@ -61,6 +62,7 @@ class BalancedBinaryTreeRecursion(Problem):
 
     def max_depth(self, root):
         """Find the maximum depth of a binary tree
+
         Args:
             root: node of the tree
         Returns:

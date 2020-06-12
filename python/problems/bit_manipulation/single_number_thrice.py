@@ -33,8 +33,9 @@ class SingleNumberThrice(Problem):
 
     def solve(self):
         """Solve the problem
-            Note: O(n) (runtime) and O(1) (space) solution works by counting number of occurrences of elements in array
-                i.e., ones, twos and threes. Finally, print the ones.
+        Note: O(n) (runtime) and O(1) (space) solution works by counting number of occurrences of elements in array
+            i.e., ones, twos and threes. Finally, print the ones.
+
         Args:
 
         Returns:

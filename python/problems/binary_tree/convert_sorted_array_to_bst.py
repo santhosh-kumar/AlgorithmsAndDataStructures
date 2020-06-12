@@ -50,8 +50,6 @@ class ConvertSortedArrayToBST(Problem):
     def sorted_array_to_bst(self, number_list, start, end):
         """Convert sorted array to Binary Search Tree
 
-        Note:
-
         Args:
             number_list: input list
             start: start index

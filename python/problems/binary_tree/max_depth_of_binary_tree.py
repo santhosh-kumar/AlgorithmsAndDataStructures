@@ -32,8 +32,9 @@ class MaxDepthOfBinaryTree(Problem):
 
     def solve(self):
         """Solve the problem
-            Note: O(n) (runtime) and O(log n) (stack space for recursion) solution works by recursively calling maximum depth of left and right subtrees.
-            Since the depth of the binary is logn it takes logn space in the stack for recursion.
+
+        Note: O(n) (runtime) and O(log n) (stack space for recursion) solution works by recursively calling maximum depth of left and right subtrees.
+        Since the depth of the binary is logn it takes logn space in the stack for recursion.
 
         Args:
 
@@ -48,6 +49,7 @@ class MaxDepthOfBinaryTree(Problem):
 
     def max_depth(self, root):
         """Find the maximum depth of a binary tree
+
         Args:
             root: node of the tree
 

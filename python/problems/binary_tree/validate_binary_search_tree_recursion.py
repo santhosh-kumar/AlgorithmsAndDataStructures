@@ -35,8 +35,9 @@ class ValidateBinarySearchTreeRecursion(Problem):
 
     def solve(self):
         """Solve the problem
-            Note: For O(n) (runtime) and O(n) (stack space due to recursion) solution, we can avoid examining all nodes of both subtrees in
-            each pass by passing down the low and high limits from the parent to its children.
+
+        Note: For O(n) (runtime) and O(n) (stack space due to recursion) solution, we can avoid examining all nodes of both subtrees in
+        each pass by passing down the low and high limits from the parent to its children.
 
         Args:
 
@@ -52,6 +53,7 @@ class ValidateBinarySearchTreeRecursion(Problem):
     @staticmethod
     def is_valid_binary_search_tree(root, low, high):
         """Check if the given is a valid binary search tree
+
         Args:
             root: node of the tree
             low: lowest value
@@ -66,8 +68,7 @@ class ValidateBinarySearchTreeRecursion(Problem):
         if root is None:
             return True
 
-        return (low is None or root.data > low) and (
-                high is None or root.data < high) and ValidateBinarySearchTreeRecursion.is_valid_binary_search_tree(
-            root.left, low, root.data) and ValidateBinarySearchTreeRecursion.is_valid_binary_search_tree(root.right,
-                                                                                                         root.data,
-                                                                                                         high)
+        return (low is None or root.data > low) and \
+               (high is None or root.data < high) and \
+               ValidateBinarySearchTreeRecursion.is_valid_binary_search_tree(root.left, low, root.data) and \
+               ValidateBinarySearchTreeRecursion.is_valid_binary_search_tree(root.right, root.data, high)

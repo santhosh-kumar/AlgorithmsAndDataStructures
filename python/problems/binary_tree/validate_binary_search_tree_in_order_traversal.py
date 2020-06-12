@@ -36,8 +36,9 @@ class ValidateBinarySearchTreeInOrderTraversal(Problem):
 
     def solve(self):
         """Solve the problem
-            Note: O(n) (runtime) and O(n) (stack space) solution works by using the in order traversal,
-            and verifying that previous node is lesser than the current node.
+
+        Note: O(n) (runtime) and O(n) (stack space) solution works by using the in order traversal,
+        and verifying that previous node is lesser than the current node.
 
         Args:
 
@@ -65,6 +66,7 @@ class ValidateBinarySearchTreeInOrderTraversal(Problem):
 
     def is_monotonically_increasing(self, node):
         """Check if the tree node is monotonically increasing
+
         Args:
             node: node of the tree
 

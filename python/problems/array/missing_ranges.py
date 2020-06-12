@@ -41,7 +41,9 @@ class MissingRanges(Problem):
 
     def solve(self):
         """Solve the problem
-        Note: O(n) (runtime) and O(1) (space) works by iterating the input_list and checking boundary conditions w.r.t. min_value and max_value.
+
+        Note: O(n) (runtime) and O(1) (space) works by iterating the input_list and checking boundary
+        conditions w.r.t. min_value and max_value.
 
         Args:
 

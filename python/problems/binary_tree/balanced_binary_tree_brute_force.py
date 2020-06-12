@@ -32,8 +32,9 @@ class BalancedBinaryTreeBruteForce(Problem):
 
     def solve(self):
         """Solve the problem
-            Note: O(n^2) (runtime) and O(n) (stack space) solution recursively calculates the maximum depth of the tree of left and right nodes.
-            Then verifies that the depth of the left and right subtrees should differ at max by 1.
+
+        Note: O(n^2) (runtime) and O(n) (stack space) solution recursively calculates the maximum depth of the tree of left and right nodes.
+        Then verifies that the depth of the left and right subtrees should differ at max by 1.
 
         Args:
 
@@ -44,13 +45,14 @@ class BalancedBinaryTreeBruteForce(Problem):
             None
         """
         print("Solving {} problem ...".format(self.PROBLEM_NAME))
-
         return self.is_balanced(self.root_node)
 
     def is_balanced(self, root):
         """Check if the binary tree is balanced
+
         Args:
             root: node of the tree
+
         Returns:
             boolean
 

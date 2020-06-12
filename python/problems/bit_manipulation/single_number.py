@@ -18,6 +18,7 @@ class SingleNumber(Problem):
 
         Args:
             input_list: Contains a list of integers
+
         Returns:
             None
 

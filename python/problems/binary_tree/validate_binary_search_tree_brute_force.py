@@ -35,9 +35,10 @@ class ValidateBinarySearchTreeBruteForce(Problem):
 
     def solve(self):
         """Solve the problem
-            Note: O(n^2) (runtime) and O(n) (stack space due to recursive calls) solution works by iterating from the current node and traversing left subtree to check
-            if the node values are lesser than the current node.
-            Then, traverse the right subtree to check if the node values are greater than the current node's value.
+
+        Note: O(n^2) (runtime) and O(n) (stack space due to recursive calls) solution works by iterating from the current node and traversing left subtree to check
+        if the node values are lesser than the current node.
+        Then, traverse the right subtree to check if the node values are greater than the current node's value.
 
         Args:
 
@@ -53,6 +54,7 @@ class ValidateBinarySearchTreeBruteForce(Problem):
     @staticmethod
     def is_valid_binary_search_tree(root):
         """Check if the given is a valid binary search tree
+
         Args:
             root: node of the tree
 

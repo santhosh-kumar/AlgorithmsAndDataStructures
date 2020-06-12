@@ -33,10 +33,11 @@ class MinDepthOfBinaryTreeBreadthFirst(Problem):
 
     def solve(self):
         """Solve the problem
-            Note: Depth first traverses all the nodes even for a highly un-balanced tree. However, breadth first stops
-            traversing when we first encounter the first leaf node. The complexity O(n) (runtime) and O(n) (space).
-            The worst case complexity happens when the binary tree has n nodes and it's balanced. The space complexity of
-            O(n) happens due to storing the elements in a queue.
+
+        Note: Depth first traverses all the nodes even for a highly un-balanced tree. However, breadth first stops
+        traversing when we first encounter the first leaf node. The complexity O(n) (runtime) and O(n) (space).
+        The worst case complexity happens when the binary tree has n nodes and it's balanced. The space complexity of
+        O(n) happens due to storing the elements in a queue.
 
         Args:
 
@@ -52,8 +53,10 @@ class MinDepthOfBinaryTreeBreadthFirst(Problem):
     @staticmethod
     def min_depth(root):
         """Find the minimum depth of a binary tree
+
         Args:
             root: node of the tree
+
         Returns:
             None
 

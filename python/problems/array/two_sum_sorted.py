@@ -23,15 +23,12 @@ class TwoSumSorted(Problem):
 
     def __init__(self, input_list, target_sum):
         """Two Sum Sorted
-
-        The O(n * logn) runtime uses the fact that the array is already sorted.
-        (target_sum-x) is binary searched in the input_list between current_index+1 and the length of the array. However, it takes O(1) space.
-
         Args:
             input_list: Contains a list of integers (sorted ascending order)
             target_sum: Target sum for which the indices need to be returned
+
         Returns:
-            None0
+            None
 
         Raises:
             None
@@ -45,6 +42,11 @@ class TwoSumSorted(Problem):
 
     def solve(self):
         """Solve the problem
+
+        Note: The O(n * logn) runtime uses the fact that the array is already sorted.
+        (target_sum-x) is binary searched in the input_list between current_index+1 and the length of the array.
+        However, it takes O(1) space.
+
         Args:
 
         Returns:
@@ -60,6 +62,7 @@ class TwoSumSorted(Problem):
             found_index = self.binary_search((self.target_sum - x), i + 1)
             if found_index > self.NOT_FOUND:
                 return found_index, found_index + 1
+
         assert (False, "InvalidArguments")
 
     def binary_search(self, key, start_index):

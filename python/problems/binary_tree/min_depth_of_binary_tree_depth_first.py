@@ -31,7 +31,7 @@ class MinDepthOfBinaryTreeDepthFirst(Problem):
 
     def solve(self):
         """Solve the problem
-            Note:
+        Note:
 
         Args:
 
@@ -46,6 +46,7 @@ class MinDepthOfBinaryTreeDepthFirst(Problem):
 
     def min_depth(self, root):
         """Find the minimum depth of a binary tree
+
         Args:
             root: node of the tree
 
@@ -57,8 +58,10 @@ class MinDepthOfBinaryTreeDepthFirst(Problem):
         """
         if root is None:
             return 0
+
         if root.left is None:
             return self.min_depth(root.right) + 1
+
         if root.right is None:
             return self.min_depth(root.left) + 1
 

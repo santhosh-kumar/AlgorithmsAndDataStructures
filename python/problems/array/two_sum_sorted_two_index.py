@@ -30,6 +30,7 @@ class TwoSumSortedTwoIndex(Problem):
         Args:
             input_list: Contains a list of integers (sorted ascending order)
             target_sum: Target sum for which the indices need to be returned
+
         Returns:
             None0
 

@@ -32,6 +32,8 @@ go through root.
   / \
 -1   4
 """
+import sys
+
 from common.problem import Problem
 
 
@@ -40,7 +42,6 @@ class BinaryTreeMaxSumPath(Problem):
     Binary Tree Max Sum Path
     """
     PROBLEM_NAME = "BinaryTreeMaxSumPath"
-    MIN_INT_VALUE = -2147483647
 
     def __init__(self, root_node):
         """Binary Tree Max Sum Path
@@ -56,15 +57,15 @@ class BinaryTreeMaxSumPath(Problem):
         """
         super().__init__(self.PROBLEM_NAME)
         self.root_node = root_node
-        self.max_sum = self.MIN_INT_VALUE
+        self.max_sum = -sys.maxsize - 1
 
     def solve(self):
         """Solve the problem
-            Note: For the bottom up approach. At each node, the potential maximum path could be one of these cases:
-            i. max(left subtree) + node
-            ii. max(right subtree) + node
+        Note: For the bottom up approach. At each node, the potential maximum path could be one of these cases:
+            i.   max(left subtree) + node
+            ii.  max(right subtree) + node
             iii. max(left subtree) + max(right subtree) + node
-            iv. the node itself
+            iv.  the node itself
 
         Args:
 
