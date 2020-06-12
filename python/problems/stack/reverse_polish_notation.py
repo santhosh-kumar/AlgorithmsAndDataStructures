@@ -28,7 +28,8 @@ class ReversePolishNotation(Problem):
         """Reverse Polish Notation
 
         Args:
-            input_string: input_string evaluated using reverse polish notation
+            input_list: input_string evaluated using reverse polish notation
+
         Returns:
             None
 
@@ -61,10 +62,7 @@ class ReversePolishNotation(Problem):
                 notation_stack.push(self.input_list[i])
             else:
                 operand2 = int(notation_stack.pop())
-                assert operand2 is not None, "Invalid operand2"
-
                 operand1 = int(notation_stack.pop())
-                assert operand1 is not None, "Invalid operand1"
 
                 result = self.evaluate(operand1, operand2, self.input_list[i])
 

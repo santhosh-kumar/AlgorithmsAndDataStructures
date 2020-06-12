@@ -21,6 +21,7 @@ If the correct value is out of the range of representable values, the maximum in
 minimum integer value (–2147483648) is returned.
 """
 import string
+import sys
 
 from common.problem import Problem
 
@@ -32,14 +33,15 @@ class AtoI(Problem):
     PROBLEM_NAME = "AtoI"
     PLUS_SIGN = '+'
     MINUS_SIGN = '-'
-    MAX_INT_VALUE = 2147483647
-    MIN_INT_VALUE = -2147483647
+    MAX_INT_VALUE = sys.maxsize
+    MIN_INT_VALUE = -sys.maxsize - 1
 
     def __init__(self, input_string):
         """AtoI
 
         Args:
             input_string: contains the input string
+
         Returns:
             None
 

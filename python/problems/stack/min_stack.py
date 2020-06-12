@@ -42,6 +42,7 @@ class MinStack(Problem):
 
     def solve(self):
         """Solve the problem
+
         Args:
 
         Returns:
@@ -54,6 +55,7 @@ class MinStack(Problem):
 
     def push(self, data):
         """Push an element to the stack
+
         Args:
 
         Returns:
@@ -69,6 +71,7 @@ class MinStack(Problem):
 
     def pop(self):
         """Pops the element from the stack
+
         Args:
 
         Returns:
@@ -86,6 +89,7 @@ class MinStack(Problem):
 
     def top(self):
         """Return the top element from the input stack
+
         Args:
 
         Returns:
@@ -98,6 +102,7 @@ class MinStack(Problem):
 
     def get_min(self):
         """Return the min element from the min stack
+
         Args:
 
         Returns:

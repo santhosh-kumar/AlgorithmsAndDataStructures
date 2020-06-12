@@ -18,6 +18,7 @@ class LongestPalindromicSubstring(Problem):
 
         Args:
             input_string: input_string to be checked longest palindromic substring
+
         Returns:
             None
 
@@ -29,6 +30,7 @@ class LongestPalindromicSubstring(Problem):
 
     def solve(self):
         """Solve the problem
+
         Note: The O(n^2)(runtime) and O(1) (space) solution exploits the fact that there are 2n-1 palindromic centers in a given string.
         At each iteration, expand around those palindromic centers (character and between characters).
 

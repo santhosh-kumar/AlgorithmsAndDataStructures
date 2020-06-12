@@ -33,7 +33,7 @@ class MergeKSortedLinkedListsDivideAndConquer(Problem):
         """Solve the problem
         Note:
             i. Brute force solution would work by comparing two lists at a time for k times. The total runtime complexity would be O(nk^2)
-        = 2n + 3n + 4n + ... + kn = n(k(k+1)/2 -1). The solution will only require a constant space O(1).
+            = 2n + 3n + 4n + ... + kn = n(k(k+1)/2 -1). The solution will only require a constant space O(1).
 
            ii. Heap has a complexity of O(log k) to order based on the heap property. We could maintain a heap of size k with smallest element from each list.
            After removing a element from the list, the next element is placed in the heap. With nk elements, the overall runtime complexity is O(nk logk) and
@@ -77,6 +77,7 @@ class MergeKSortedLinkedListsDivideAndConquer(Problem):
         Args:
             node1: First node
             node2: Second node
+
         Returns:
             Node
 

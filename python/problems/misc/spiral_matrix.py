@@ -25,6 +25,7 @@ class SpiralMatrix(Problem):
 
         Args:
             input_matrix: Input matrix
+
         Returns:
             None
 

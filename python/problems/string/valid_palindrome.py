@@ -79,6 +79,7 @@ class ValidPalindrome(Problem):
     @staticmethod
     def is_letter_or_digit(input_character):
         """Checks if the given character is a letter or a digit
+
         Args:
             input_character: to be checked
 

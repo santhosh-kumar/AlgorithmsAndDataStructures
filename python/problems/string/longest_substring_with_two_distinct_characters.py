@@ -34,10 +34,12 @@ class LongestSubstringWithTwoDistinctCharacters(Problem):
 
     def solve(self):
         """Solve the problem
-            Note: Uses a sliding window template to increment end till (> num_distinct = 2) characters are encountered.
-            Then, begin is incremented till the counter for the beginning character becomes 0. max_length is updated based
-            on the current begin and end.
-            This is an O(n) run time solution with a space complexity of O(n) (due to using a map for storing per character count)
+
+        Note: Uses a sliding window template to increment end till (> num_distinct = 2) characters are encountered.
+        Then, begin is incremented till the counter for the beginning character becomes 0. max_length is updated based
+        on the current begin and end.
+        This is an O(n) run time solution with a space complexity of O(n) (due to using a map for storing per character count)
+
         Args:
 
         Returns:

@@ -25,6 +25,7 @@ class ValidParantheses(Problem):
 
         Args:
             input_string: input_string to be checked if it's a valid parantheses
+
         Returns:
             None
 

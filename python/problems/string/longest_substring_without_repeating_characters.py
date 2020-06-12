@@ -31,9 +31,11 @@ class LongestSubstringWithoutRepeatingCharacters(Problem):
 
     def solve(self):
         """Solve the problem
-            Note: O(n) (runtime) and O(1) (space) iterates over the string, checks if the character is seen so far.
-             If not, increment the string count.
-             Search operations in list and dict take O(1).
+
+        Note: O(n) (runtime) and O(1) (space) iterates over the string, checks if the character is seen so far.
+        If not, increment the string count.
+        Search operations in list and dict take O(1).
+
         Args:
 
         Returns:

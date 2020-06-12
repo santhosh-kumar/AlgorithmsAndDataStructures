@@ -36,7 +36,9 @@ class PalindromeNumber(Problem):
 
     def solve(self):
         """Solve the problem
-            Note: O(n) solution works by comparing left and right most digits until they are different or all the numbers are seen.
+
+        Note: O(n) solution works by comparing left and right most digits until they are different or all the numbers are seen.
+
         Args:
 
         Returns:

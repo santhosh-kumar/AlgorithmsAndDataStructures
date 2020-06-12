@@ -54,9 +54,10 @@ class CopyListWithRandomPointer(Problem):
 
     def solve(self):
         """Solve the problem
-            Note: O(n) (runtime) and O(1) (space) solution works by:
-             i. Inserting a clone node between two nodes.
-             ii. Updating the random pointer of the cloned nodes.
+
+        Note: O(n) (runtime) and O(1) (space) solution works by:
+             i.   Inserting a clone node between two nodes.
+             ii.  Updating the random pointer of the cloned nodes.
              iii. Detaching original and cloned nodes.
 
         Args:

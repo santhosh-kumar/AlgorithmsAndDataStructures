@@ -40,7 +40,8 @@ class ReverseIntegers(Problem):
 
     def solve(self):
         """Solve the problem
-            Note: O(n) (runtime) and O(1) (space) solution works by using the modulo operator to get the last digit of the number.
+
+        Note: O(n) (runtime) and O(1) (space) solution works by using the modulo operator to get the last digit of the number.
 
         Args:
 
