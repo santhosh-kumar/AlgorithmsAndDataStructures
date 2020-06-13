@@ -18,7 +18,7 @@ class AllPairsShortestPathsFloydWarshallAlgorithm(Problem):
         """All Pairs Shortest Path (Floyd Warshall)
 
         Args:
-            input_adjacency_matrix: Graph for which to find the minimum spanning tree
+            input_adjacency_matrix: Graph for which to find all pairs shortest paths
 
         Returns:
             None
@@ -55,6 +55,3 @@ class AllPairsShortestPathsFloydWarshallAlgorithm(Problem):
                                                             self.input_adjacency_matrix[k][j])
 
         return self.input_adjacency_matrix
-
-
-

@@ -36,4 +36,5 @@ class TestTrie(TestCase):
         self.assertEqual(trie_obj.find_prefix("he"), (True, 3))
         self.assertEqual(trie_obj.find_prefix("hell"), (True, 2))
         self.assertEqual(trie_obj.find_prefix("hello"), (True, 1))
+        self.assertEqual(trie_obj.find_prefix("h"), (True, 3))
         self.assertEqual(trie_obj.find_prefix("me"), (False, 0))

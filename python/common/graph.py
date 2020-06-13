@@ -140,6 +140,19 @@ class Graph:
 
         return adjacency_list
 
+    def get_neighbors(self, vertex):
+        """Returns the neighbors of a particular node
+
+        Args:
+
+        Returns:
+            dict
+
+        Raises:
+            None
+        """
+        return self.graph[vertex]
+
     @staticmethod
     def depth_first_traversal(graph_node, vertex_list):
         """Depth First Traversal of a Graph

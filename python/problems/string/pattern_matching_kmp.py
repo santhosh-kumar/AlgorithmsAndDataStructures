@@ -20,8 +20,9 @@ class PatternMatchingKMPAlgorithm(Problem):
         Args:
             input_string: haystack
             pattern: to be searched in the haystack
+
         Returns:
-            None
+            list
 
         Raises:
             None
