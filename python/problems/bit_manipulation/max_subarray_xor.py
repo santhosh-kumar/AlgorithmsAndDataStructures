@@ -28,7 +28,7 @@ class MaxSubarrayXOR(Problem):
     """
     PROBLEM_NAME = "MaxSubarrayXOR"
 
-    def __init__(self, input_list, ):
+    def __init__(self, input_list):
         """Two Sum
 
         Args:
