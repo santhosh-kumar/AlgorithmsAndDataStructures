@@ -1,26 +1,28 @@
 """
-Max Flow (Ford Fulkerson)
+Min Cut
 
 Given a DIRECTED graph which represents a flow network where every edge has a capacity.
-Also given two vertices source ‘s’ and sink ‘t’ in the graph, find the maximum possible flow from s to t with following constraints:
+Also given two vertices source ‘s’ and sink ‘t’ in the graph.
 
-a) Flow on an edge doesnt exceed the given capacity of the edge.
+In a flow network, an s-t cut is a cut that requires the source ‘s’ and the sink ‘t’ to be in different subsets,
+and it consists of edges going from the source’s side to the sink’s side.
 
-b) Incoming flow is equal to outgoing flow for every vertex except s and t.
+The capacity of an s-t cut is defined by the sum of the capacity of each edge in the cut-set.
 """
 from collections import deque
 
 from common.problem import Problem
+from copy import deepcopy
 
 
-class MaxFlowFordFulkersonAlgorithm(Problem):
+class MinCut(Problem):
     """
-    MaxFlowFordFulkersonAlgorithm
+    MinCut
     """
-    PROBLEM_NAME = "MaxFlowFordFulkersonAlgorithm"
+    PROBLEM_NAME = "MinCut"
 
     def __init__(self, input_capacity_matrix, source, sink):
-        """Max Flow (Ford Fulkerson)
+        """Min Cut
 
         Args:
             input_capacity_matrix: Graph with vertex to vertex capacities
@@ -46,15 +48,19 @@ class MaxFlowFordFulkersonAlgorithm(Problem):
 
             iii. Update the capacity matrix by reducing the current minimum path flow and augmenting to the residual graph.
 
+            The max-flow min-cut theorem states that in a flow network, the amount of maximum flow is equal to capacity of the minimum cut.
+
         Args:
 
         Returns:
-            integer
+            list
 
         Raises:
             None
         """
         print("Solving {} problem ...".format(self.PROBLEM_NAME))
+        original_capacity_matrix = deepcopy(self.input_capacity_matrix)
+
         max_rows = len(self.input_capacity_matrix)
 
         # Breadth first search will use this list to mark the parents for the path
@@ -83,11 +89,19 @@ class MaxFlowFordFulkersonAlgorithm(Problem):
 
             while v != self.source:
                 u = parent_list[v]
-                self.input_capacity_matrix[u][v] -= min_path_flow
-                self.input_capacity_matrix[v][u] += min_path_flow
+                self.input_capacity_matrix[u][v] = self.input_capacity_matrix[u][v] - min_path_flow
+                self.input_capacity_matrix[v][u] = self.input_capacity_matrix[v][u] - min_path_flow
                 v = parent_list[v]
 
-        return max_flow
+        # print the edges which initially had weights
+        # but now have 0 weight
+        min_cut_edges = []
+        for i in range(len(self.input_capacity_matrix)):
+            for j in range(len(self.input_capacity_matrix[0])):
+                if self.input_capacity_matrix[i][j] == 0 and original_capacity_matrix[i][j] > 0:
+                    min_cut_edges.append((i, j))
+
+        return min_cut_edges
 
     @staticmethod
     def breadth_first_search(capacity_matrix, source, sink, parents_list):

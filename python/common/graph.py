@@ -285,15 +285,15 @@ class UndirectedGraph(Graph):
         visited_dict[vertex] = True
 
         # Recur for all the vertices adjacent to this vertex
-        for i in self.graph[vertex]:
+        for neighbor_vertex in self.graph[vertex]:
             # If the node is not visited then recurse on it
-            if not visited_dict[i]:
-                if self.is_cyclic(i, visited_dict, vertex):
+            if not visited_dict[neighbor_vertex]:
+                if self.is_cyclic(neighbor_vertex, visited_dict, vertex):
                     return True
 
             # If an adjacent vertex is visited and not parent of current vertex,
             # then there is a cycle
-            elif parent != i:
+            elif parent != neighbor_vertex:
                 return True
 
         return False
