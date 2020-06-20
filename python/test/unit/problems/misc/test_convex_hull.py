@@ -3,8 +3,8 @@ Unit Test for convex_hull
 """
 from unittest import TestCase
 
-from problems.misc.convex_hull import ConvexHull
 from common.point import Point2D
+from problems.misc.convex_hull import ConvexHull
 
 
 class TestConvexHull(TestCase):

@@ -10,9 +10,9 @@ and it consists of edges going from the source’s side to the sink’s side.
 The capacity of an s-t cut is defined by the sum of the capacity of each edge in the cut-set.
 """
 from collections import deque
+from copy import deepcopy
 
 from common.problem import Problem
-from copy import deepcopy
 
 
 class MinCut(Problem):

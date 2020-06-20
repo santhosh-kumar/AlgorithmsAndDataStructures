@@ -67,5 +67,3 @@ class TestValidNumber(TestCase):
 
         # Then
         self.assertTrue(valid_number_problem.solve())
-
-

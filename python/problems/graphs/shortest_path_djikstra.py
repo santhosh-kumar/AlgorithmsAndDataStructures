@@ -4,8 +4,9 @@ Compute Shortest Path (Djikstra's Algorithm)
 Given a graph and a source vertex in the graph, find shortest paths from source to all vertices in the given graph.
 Dijkstra’s algorithm is very similar to Prim’s algorithm for minimum spanning tree.
 """
-from common.problem import Problem
 import heapq
+
+from common.problem import Problem
 
 
 class ShortestPathDjikstrasAlgorithm(Problem):

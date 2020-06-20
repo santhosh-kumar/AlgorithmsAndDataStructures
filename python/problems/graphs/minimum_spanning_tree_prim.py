@@ -11,8 +11,9 @@ The weight of a spanning tree is the sum of weights given to each edge of the sp
 How many edges does a minimum spanning tree has?
 A minimum spanning tree has (V – 1) edges where V is the number of vertices in the given graph.
 """
-from common.problem import Problem
 import heapq
+
+from common.problem import Problem
 
 
 class MinimumSpanningTreePrimsAlgorithm(Problem):

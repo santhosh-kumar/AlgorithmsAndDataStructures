@@ -33,4 +33,4 @@ class TestMissingRanges(TestCase):
         range_list = missing_ranges_problem.solve()
 
         # Then
-        self.assertEqual(range_list,  ["2", "4->49", "51->74", "76->99"])
+        self.assertEqual(range_list, ["2", "4->49", "51->74", "76->99"])

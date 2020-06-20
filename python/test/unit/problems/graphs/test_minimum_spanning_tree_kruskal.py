@@ -3,8 +3,9 @@ Unit Test for find_connected_components
 """
 from unittest import TestCase
 
-from problems.graphs.minimum_spanning_tree_kruskal import MinimumSpanningTreeKruskalsAlgorithm
 from common.graph import UndirectedGraph
+from problems.graphs.minimum_spanning_tree_kruskal import MinimumSpanningTreeKruskalsAlgorithm
+
 
 class TestMinimumSpanningTreeKruskalsAlgorithm(TestCase):
     """
@@ -32,7 +33,7 @@ class TestMinimumSpanningTreeKruskalsAlgorithm(TestCase):
         3--2--4--5
         '''
         input_graph = UndirectedGraph()
-        input_graph.add_edge(0, 1, 4) # u, v, weight
+        input_graph.add_edge(0, 1, 4)  # u, v, weight
         input_graph.add_edge(1, 2, 3)
         input_graph.add_edge(2, 3, 1)
         input_graph.add_edge(3, 0, 2)
