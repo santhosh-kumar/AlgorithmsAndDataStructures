@@ -100,7 +100,6 @@ class QuadTree:
 
         half_width = float(node.width / 2)
         half_height = float(node.height / 2)
-
         quadrants = [(node.x0, node.y0), (node.x0, node.y0 + half_height), (node.x0 + half_width, node.y0),
                      (node.x0 + half_width, node.y0 + half_height)]
 
