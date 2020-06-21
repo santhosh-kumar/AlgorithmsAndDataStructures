@@ -1,22 +1,22 @@
 """
-Unit Test for right_view_binary_tree
+Unit Test for bottom_view_binary_tree
 """
 from unittest import TestCase
 
 from common.linked_list import BinaryTreeNode
-from problems.binary_tree.right_view_binary_tree import RightViewOfBinaryTree
+from problems.binary_tree.bottom_view_binary_tree import BottomViewOfBinaryTree
 
 
-class TestRightViewOfBinaryTree(TestCase):
+class TestBottomViewOfBinaryTree(TestCase):
     """
-    Unit test for RightViewOfBinaryTree
+    Unit test for BottomViewOfBinaryTree
     """
 
     def test_solve(self):
         """Test solve
 
         Args:
-            self: TestRightViewOfBinaryTree
+            self: TestBottomViewOfBinaryTree
 
         Returns:
             None
@@ -33,10 +33,10 @@ class TestRightViewOfBinaryTree(TestCase):
         root.right.right.right = BinaryTreeNode(8)
         root.right.right.left = BinaryTreeNode(6)
 
-        right_view_problem = RightViewOfBinaryTree(root)
+        bottom_view_problem = BottomViewOfBinaryTree(root)
 
         # When
-        result = right_view_problem.solve()
+        result = bottom_view_problem.solve()
 
         # Then
-        self.assertEqual(result, [3, 5, 7, 8])
+        self.assertEqual(result, [2, 4, 6, 7, 8])

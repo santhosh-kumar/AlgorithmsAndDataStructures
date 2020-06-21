@@ -66,7 +66,7 @@ class TopViewOfBinaryTree(Problem):
 
         return top_view_list
 
-    def fill_level(self, root, distance, level, level_dict):
+    def fill_level(self, root, horizontal_distance, level, level_dict):
         """Fill the level
         Args:
 
@@ -79,11 +79,11 @@ class TopViewOfBinaryTree(Problem):
         if root is None:
             return
 
-        if distance not in level_dict:
-            level_dict[distance] = [root.data, level]
-        elif level_dict[distance][1] > level:
-            level_dict[distance] = [root.data, level]
+        if horizontal_distance not in level_dict:
+            level_dict[horizontal_distance] = [root.data, level]
+        elif level_dict[horizontal_distance][1] > level:
+            level_dict[horizontal_distance] = [root.data, level]
 
-        self.fill_level(root.left, distance - 1, level + 1, level_dict)
+        self.fill_level(root.left, horizontal_distance - 1, level + 1, level_dict)
 
-        self.fill_level(root.right, distance + 1, level + 1, level_dict)
+        self.fill_level(root.right, horizontal_distance + 1, level + 1, level_dict)
