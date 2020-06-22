@@ -1,5 +1,5 @@
 """
-Unit Test for unionfind
+Unit Test for binary_indexed_tree
 """
 from unittest import TestCase
 
