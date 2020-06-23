@@ -58,6 +58,9 @@ class BinaryIndexedTree:
             self.bit_tree[index] = self.bit_tree[index] + value
 
             # Update index to that of parent in update View
+            # 1) Get 2's complement of the number
+            # 2) And it with the original number
+            # 3) Add to the original number
             index += index & (-index)
 
     def get_sum(self, index):
@@ -83,6 +86,11 @@ class BinaryIndexedTree:
             total_sum += self.bit_tree[index]
 
             # Move index to parent node in get_sum View
+            # 1) Get 2's complement of the number
+            # 2) And it with the original number
+            # 3) Subtract from the original number
+            # for example, from 7 (111), 2's complement = 000, 2's complement+1 = 001, Subtracting 111-001 = 110.
+            # It's essentially flipping the right most bit.
             index -= index & (-index)
 
         return total_sum
