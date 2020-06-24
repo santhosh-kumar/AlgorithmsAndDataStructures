@@ -146,12 +146,12 @@ class Graph:
         Args:
 
         Returns:
-            dict
+            list
 
         Raises:
             None
         """
-        return self.graph[vertex]
+        return self.graph[vertex].keys()
 
     @staticmethod
     def depth_first_traversal(graph_node, vertex_list):
