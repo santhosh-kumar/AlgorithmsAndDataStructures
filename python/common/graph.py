@@ -155,7 +155,7 @@ class Graph:
 
     @staticmethod
     def depth_first_traversal(graph_node, vertex_list):
-        """Depth First Traversal of a Graph
+        """Depth First Traversal of a Graph. Complexity is O(V+E).
 
         Args:
             graph_node: Starting node of the graph
@@ -181,7 +181,7 @@ class Graph:
 
     @staticmethod
     def breadth_first_traversal(graph_node, vertex_list):
-        """Breadth First Traversal of a Graph
+        """Breadth First Traversal of a Graph. Complexity is O(V+E).
 
         Args:
             graph_node: Starting node of the graph

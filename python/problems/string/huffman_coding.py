@@ -67,7 +67,7 @@ class HuffmanCoding(Problem):
             frequency_dict: Characters frequency dict
 
         Returns:
-            defaultdict(int)
+            dict
 
         Raises:
             None

@@ -69,6 +69,7 @@ class Trie:
 
     def add(self, word):
         """Add a word to the trie
+
         Args:
             word: to be added to the trie
 

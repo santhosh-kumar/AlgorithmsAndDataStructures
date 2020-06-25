@@ -52,10 +52,10 @@ class CountNumberOfBitsToFlip(Problem):
         """
         print("Solving {} problem ...".format(self.PROBLEM_NAME))
 
-        return self.count_set_bits_with_brian_kernighan_algorithm(self.input_number1 ^ self.input_number2)
+        return self.count_set_bits(self.input_number1 ^ self.input_number2)
 
     @staticmethod
-    def count_set_bits_with_brian_kernighan_algorithm(number):
+    def count_set_bits(number):
         """Brian Kernighan's algorithm to count set bits
 
         Note:
@@ -80,4 +80,4 @@ class CountNumberOfBitsToFlip(Problem):
         if number == 0:
             return 0
 
-        return 1 + CountNumberOfBitsToFlip.count_set_bits_with_brian_kernighan_algorithm(number & (number - 1))
+        return 1 + CountNumberOfBitsToFlip.count_set_bits(number & (number - 1))
