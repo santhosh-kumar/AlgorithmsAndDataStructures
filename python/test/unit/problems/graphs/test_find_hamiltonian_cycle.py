@@ -1,5 +1,5 @@
 """
-Unit Test for detect_cycle_in_undirected_graph
+Unit Test for find_hamiltonian_cycle
 """
 from unittest import TestCase
 
