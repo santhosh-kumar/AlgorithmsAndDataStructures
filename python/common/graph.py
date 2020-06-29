@@ -151,7 +151,7 @@ class Graph:
         Raises:
             None
         """
-        return self.graph[vertex].keys()
+        return list(self.graph[vertex].keys())
 
     @staticmethod
     def depth_first_traversal(graph_node, vertex_list):
