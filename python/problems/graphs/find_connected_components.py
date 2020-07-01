@@ -12,7 +12,7 @@ For example,
 Given n = 5 and edges = [[0, 1], [1, 2], [3, 4]], return 2.
 """
 from common.problem import Problem
-from common.unionfind import UnionFind
+from common.union_find import UnionFind
 
 
 class FindConnectedComponents(Problem):

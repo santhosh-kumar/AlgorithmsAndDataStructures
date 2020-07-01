@@ -12,7 +12,7 @@ How many edges does a minimum spanning tree has?
 A minimum spanning tree has (V – 1) edges where V is the number of vertices in the given graph.
 """
 from common.problem import Problem
-from common.unionfind import UnionFind
+from common.union_find import UnionFind
 
 
 class MinimumSpanningTreeKruskalsAlgorithm(Problem):

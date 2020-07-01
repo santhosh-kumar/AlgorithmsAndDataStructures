@@ -3,7 +3,7 @@ Unit Test for unionfind
 """
 from unittest import TestCase
 
-from common.unionfind import UnionFind
+from common.union_find import UnionFind
 
 
 class TestUnionFind(TestCase):

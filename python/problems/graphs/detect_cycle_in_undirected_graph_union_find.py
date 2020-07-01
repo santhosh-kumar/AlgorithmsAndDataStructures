@@ -14,7 +14,7 @@ Note: Use Union Find dataStructure to detect cycles.
 
 """
 from common.problem import Problem
-from common.unionfind import UnionFind
+from common.union_find import UnionFind
 
 
 class DetectCycleInUndirectedGraphUnionFind(Problem):
