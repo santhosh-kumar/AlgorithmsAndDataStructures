@@ -3,7 +3,7 @@ Unit Test for convert_sorted_array_to_bst
 """
 from unittest import TestCase
 
-from common.linked_list import BinaryTreeNode
+from common.binary_tree import BinaryTreeNode
 from problems.binary_tree.convert_sorted_array_to_bst import ConvertSortedArrayToBST
 
 

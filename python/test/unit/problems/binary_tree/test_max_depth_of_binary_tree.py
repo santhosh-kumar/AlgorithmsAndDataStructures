@@ -3,7 +3,7 @@ Unit Test for max_depth_of_binary_tree
 """
 from unittest import TestCase
 
-from common.linked_list import BinaryTreeNode
+from common.binary_tree import BinaryTreeNode
 from problems.binary_tree.max_depth_of_binary_tree import MaxDepthOfBinaryTree
 
 

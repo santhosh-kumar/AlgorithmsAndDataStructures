@@ -3,7 +3,7 @@ Unit Test for bottom_view_binary_tree
 """
 from unittest import TestCase
 
-from common.linked_list import BinaryTreeNode
+from common.binary_tree import BinaryTreeNode
 from problems.binary_tree.bottom_view_binary_tree import BottomViewOfBinaryTree
 
 

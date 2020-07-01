@@ -3,7 +3,7 @@ Unit Test for check_binary_tree_is_full
 """
 from unittest import TestCase
 
-from common.linked_list import BinaryTreeNode
+from common.binary_tree import BinaryTreeNode
 from problems.binary_tree.check_binary_tree_is_full import CheckBinaryTreeIsFull
 
 

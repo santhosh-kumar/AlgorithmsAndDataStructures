@@ -4,7 +4,7 @@ Convert Sorted Array to a Balanced Binary Search Tree
 Given an array where elements are sorted in ascending order, convert it to a height
 balanced BST.
 """
-from common.linked_list import BinaryTreeNode
+from common.binary_tree import BinaryTreeNode
 from common.problem import Problem
 
 

@@ -87,7 +87,7 @@ class CheckArrayIsPreOrderBST(Problem):
                 root = value_stack.pop()
 
             # If we find a node who is on the right side
-            # and smaller than root, return False
+            # and greater than root, add to the stack
             value_stack.push(value)
 
         return True

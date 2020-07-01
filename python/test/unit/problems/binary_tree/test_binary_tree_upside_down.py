@@ -3,7 +3,7 @@ Unit Test for binary_tree_upside_down
 """
 from unittest import TestCase
 
-from common.linked_list import BinaryTreeNode
+from common.binary_tree import BinaryTreeNode
 from problems.binary_tree.binary_tree_upside_down import BinaryTreeUpsideDown
 
 

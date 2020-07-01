@@ -3,7 +3,7 @@ Unit Test for validate_binary_search_tree_brute_force
 """
 from unittest import TestCase
 
-from common.linked_list import BinaryTreeNode
+from common.binary_tree import BinaryTreeNode
 from problems.binary_tree.validate_binary_search_tree_brute_force import ValidateBinarySearchTreeBruteForce
 
 

@@ -3,7 +3,7 @@ Unit Test for binary_tree_max_sum_path
 """
 from unittest import TestCase
 
-from common.linked_list import BinaryTreeNode
+from common.binary_tree import BinaryTreeNode
 from problems.binary_tree.binary_tree_max_sum_path import BinaryTreeMaxSumPath
 
 
