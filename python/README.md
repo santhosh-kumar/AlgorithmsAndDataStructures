@@ -22,6 +22,12 @@ Usage
 2. Set the interpreter (python 3.7)
 3. Run the tests
 
+Additional Dependencies
+-----------------------
+1. mmh3
+2. bitarray
+
+
 ### Contact ###
 1. Santhoshkumar Sunderrajan(santhoshkumar.sunderrajan@gmail.com)
 
