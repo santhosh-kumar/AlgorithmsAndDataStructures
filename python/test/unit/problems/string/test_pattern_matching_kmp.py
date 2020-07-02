@@ -1,5 +1,5 @@
 """
-Unit Test for strstr
+Unit Test for pattern_matching_kmp
 """
 from unittest import TestCase
 

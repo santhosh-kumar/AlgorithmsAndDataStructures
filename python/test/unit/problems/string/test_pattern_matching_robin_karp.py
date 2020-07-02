@@ -1,5 +1,5 @@
 """
-Unit Test for strstr
+Unit Test for pattern_matching_rabin_karp
 """
 from unittest import TestCase
 
