@@ -56,3 +56,26 @@ class TestRemoveDuplicatesInPlaceSortedArray(TestCase):
         # Then
         self.assertEqual(result, 7)
         self.assertEqual([1, 2, 3, 4, 5, 6, 7, 8], input_list[:result + 1])
+
+    def test_solve_all_duplicate(self):
+        """Test solve
+
+        Args:
+            self: TestRemoveDuplicatesInPlaceSortedArray
+
+        Returns:
+            None
+
+        Raises:
+            None
+        """
+        # Given
+        input_list = [2, 2, 2, 2, 2, 2]
+        two_sum_problem = RemoveDuplicatesInPlaceSortedArray(input_list)
+
+        # When
+        result = two_sum_problem.solve()
+
+        # Then
+        self.assertEqual(result, 0)
+        self.assertEqual([2], input_list[:result + 1])

@@ -57,7 +57,7 @@ class RemoveDuplicatesInPlaceSortedArray(Problem):
         while i < len(self.input_list):
             j = i + 1
 
-            # iterate till we find the next non-duplicate increasing value
+            # iterate till we find the next non-duplicate and an increasing value
             while j < len(self.input_list) and (
                     self.input_list[i] == self.input_list[j] or self.input_list[i] > self.input_list[j]):
                 j = j + 1
