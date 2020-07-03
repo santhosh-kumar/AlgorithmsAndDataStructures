@@ -4,35 +4,6 @@ This module defines linked_list
 from abc import ABCMeta, abstractmethod
 
 
-class BaseLinkedList:
-    """
-    Abstraction for LinkedList
-    """
-    __metaclass__ = ABCMeta
-
-    @abstractmethod
-    def append(self, node):
-        """appends a node to the linked list
-
-        Args:
-            node: to be appended
-        Raises:
-        None
-        """
-        raise NotImplementedError
-
-    @abstractmethod
-    def output_list(self):
-        """Outputs the linked list
-
-        Args:
-
-        Raises:
-        None
-        """
-        raise NotImplementedError
-
-
 class Node:
     """
     An element (node) in the linked list
@@ -67,6 +38,35 @@ class Node:
             None
         """
         return self.data < other.data
+
+
+class BaseLinkedList:
+    """
+    Abstraction for LinkedList
+    """
+    __metaclass__ = ABCMeta
+
+    @abstractmethod
+    def append(self, node):
+        """appends a node to the linked list
+
+        Args:
+            node: to be appended
+        Raises:
+        None
+        """
+        raise NotImplementedError
+
+    @abstractmethod
+    def output_list(self):
+        """Outputs the linked list
+
+        Args:
+
+        Raises:
+        None
+        """
+        raise NotImplementedError
 
 
 class LinkedList(BaseLinkedList):
