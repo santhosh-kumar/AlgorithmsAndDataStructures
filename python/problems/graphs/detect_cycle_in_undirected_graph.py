@@ -57,7 +57,40 @@ class DetectCycleInUndirectedGraph(Problem):
             visited_dict[vertex] = False
 
         for vertex in self.input_graph.get_vertices():
-            if not visited_dict[vertex] and self.input_graph.is_cyclic(vertex, visited_dict, None):
+            if not visited_dict[vertex] and self.is_cyclic(self.input_graph, vertex, visited_dict, None):
+                return True
+
+        return False
+
+    @staticmethod
+    def is_cyclic(input_graph, vertex, visited_dict, parent):
+        """ Check if the given node is part of a cycle
+
+        Args:
+            input_graph: input graph
+            vertex: label of the vertex to be checked
+            visited_dict: dict of vertices to mark if they are visited or not
+            parent: label for the parent vertex
+
+        Returns:
+            None
+
+        Raises:
+            None
+        """
+        # Mark the current node as visited
+        visited_dict[vertex] = True
+
+        # Recur for all the vertices adjacent to this vertex
+        for neighbor_vertex in input_graph.graph[vertex]:
+            # If the node is not visited then recurse on it
+            if not visited_dict[neighbor_vertex]:
+                if DetectCycleInUndirectedGraph.is_cyclic(input_graph, neighbor_vertex, visited_dict, vertex):
+                    return True
+
+            # If an adjacent vertex is visited and not parent of current vertex,
+            # then there is a cycle
+            elif parent != neighbor_vertex:
                 return True
 
         return False

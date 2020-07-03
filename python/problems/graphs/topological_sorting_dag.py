@@ -63,6 +63,31 @@ class TopologicalSortingDAG(Problem):
 
         for vertex in range(self.number_vertices):
             if not visited_list[vertex]:
-                self.input_graph.topological_sort_util(vertex, visited_list, sort_list)
+                self.topological_sort_util(self.input_graph, vertex, visited_list, sort_list)
 
         return sort_list
+
+    @staticmethod
+    def topological_sort_util(input_graph, vertex, visited_list, sort_list):
+        """Topological sort
+
+        Args:
+            input_graph: input graph
+            vertex: under consideration
+            visited_list: list of vertices that are visited
+            sort_list: list of sorted vertices
+
+        Returns:
+            None
+
+        Raises:
+            None
+        """
+        # Mark the code node as visited
+        visited_list[vertex] = True
+
+        for neighbor_vertex in input_graph.graph[vertex]:
+            if not visited_list[neighbor_vertex]:
+                TopologicalSortingDAG.topological_sort_util(input_graph, neighbor_vertex, visited_list, sort_list)
+
+        sort_list.insert(0, vertex)

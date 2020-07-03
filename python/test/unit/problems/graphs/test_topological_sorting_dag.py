@@ -26,7 +26,7 @@ class TestTopologicalSortingDAG(TestCase):
         """
         # Given
         '''
-        Note : All the edges are Undirected 
+        Note : All the edges are Directed 
         
         Given Graph: 
             5 ----> 0 <----- 4
