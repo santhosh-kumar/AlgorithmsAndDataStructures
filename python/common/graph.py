@@ -119,7 +119,16 @@ class Graph:
         adjacency_list = []
         for u in self.get_vertices():
             for v in self.graph[u].keys():
-                adjacency_list.append((self.graph[u][v], u, v))
+                # check if the edge already exists (v, u)
+                does_edge_exist = False
+                for w, u1, v1 in adjacency_list:
+                    if (u == v1 and v == u1) or (u == u1 and v == v1):
+                        does_edge_exist = True
+                        break
+
+                # append to the list if it doesn't exist already
+                if not does_edge_exist:
+                    adjacency_list.append((self.graph[u][v], u, v))
 
         return adjacency_list
 

@@ -182,12 +182,5 @@ class TestGraph(TestCase):
         self.assertEqual(graph.get_neighbors(2), [1, 3])
         self.assertEqual(graph.get_neighbors(3), [2, 4])
         self.assertEqual(graph.get_neighbors(4), [3, 1])
-        self.assertEqual(graph.get_adjacency_list(), [(None, 1, 2),
-                                                      (None, 1, 4),
-                                                      (None, 2, 1),
-                                                      (None, 2, 3),
-                                                      (None, 3, 2),
-                                                      (None, 3, 4),
-                                                      (None, 4, 3),
-                                                      (None, 4, 1)])
+        self.assertEqual(graph.get_adjacency_list(), [(None, 1, 2), (None, 1, 4), (None, 2, 3), (None, 3, 4)])
         self.assertEqual(graph.get_adjacency_list_for_vertex(1), [(None, 1, 2), (None, 1, 4)])
