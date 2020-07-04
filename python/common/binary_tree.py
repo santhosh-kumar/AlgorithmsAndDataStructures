@@ -1,5 +1,5 @@
 """
-This module defines a binary tree datastructure.
+This module defines a binary tree data structure.
 """
 from collections import deque
 

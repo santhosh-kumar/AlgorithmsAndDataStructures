@@ -1,5 +1,5 @@
 """
-This module defines the stack data structure
+This module defines the stack (FILO) data structure
 """
 
 

@@ -1,7 +1,7 @@
 """
 This module defines the quad tree data structure
 
-A quadtree is a data structure that can be useful for spatial indexing (it's often used in games for collision detection).
+A quad-tree is a data structure that can be useful for spatial indexing (it's often used in games for collision detection).
 In a quadtree, each node has exactly 4 children. When the number of nodes in a leaf reaches a specified threshold,
 the tree recursively divides.
 """

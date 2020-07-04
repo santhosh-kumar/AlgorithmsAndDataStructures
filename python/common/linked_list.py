@@ -1,7 +1,6 @@
 """
 This module defines linked_list
 """
-from abc import ABCMeta, abstractmethod
 
 
 class Node:
@@ -40,36 +39,7 @@ class Node:
         return self.data < other.data
 
 
-class BaseLinkedList:
-    """
-    Abstraction for LinkedList
-    """
-    __metaclass__ = ABCMeta
-
-    @abstractmethod
-    def append(self, node):
-        """appends a node to the linked list
-
-        Args:
-            node: to be appended
-        Raises:
-        None
-        """
-        raise NotImplementedError
-
-    @abstractmethod
-    def output_list(self):
-        """Outputs the linked list
-
-        Args:
-
-        Raises:
-        None
-        """
-        raise NotImplementedError
-
-
-class LinkedList(BaseLinkedList):
+class LinkedList:
     """
     Concrete implementation of LinkedList
     """
@@ -104,6 +74,54 @@ class LinkedList(BaseLinkedList):
                 last_node = last_node.next_node
 
             last_node.next_node = node
+
+    def find(self, data):
+        """Find the node with the given data
+
+        Args:
+            data: to be found
+
+        Return:
+            Node
+
+        Raises:
+            None
+        """
+        current_node = self.head
+
+        while current_node is not None:
+            if current_node.data == data:
+                return current_node
+            current_node = current_node.next_node
+
+        return None
+
+    def delete(self, data):
+        """Delete the node with the given data
+
+        Args:
+            data: to be found
+
+        Return:
+            Node
+
+        Raises:
+            None
+        """
+        current_node = self.head
+
+        if current_node is None:
+            return
+
+        previous_node = None
+        while current_node is not None:
+            if current_node.data == data:
+                break
+            previous_node = current_node
+            current_node = current_node.next_node
+
+        if previous_node is not None:
+            previous_node.next_node = current_node.next_node
 
     def output_list(self):
         """Outputs the linked list
