@@ -38,7 +38,8 @@ class ShortestPathBellmanFordAlgorithm(Problem):
     def solve(self):
         """Solve the problem
 
-        Note: O(VE) (runtime)
+        Note: O(VE) (runtime) uses a relaxation technique by iterating the adjacency list V-1 times i.e.,
+        distance[v] = distance[u] + w if distance[u]+w < distance[v].
 
         Args:
 

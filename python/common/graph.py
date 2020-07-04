@@ -105,6 +105,19 @@ class Graph:
         """
         raise NotImplementedError
 
+    def reverse(self):
+        """Reverse the graph
+
+        Args:
+
+        Returns:
+            Graph
+
+        Raises:
+            None
+        """
+        raise NotImplementedError
+
     def get_adjacency_list(self):
         """Returns the adjacency list (weight, u, v)
 
@@ -161,6 +174,25 @@ class Graph:
             None
         """
         return list(self.graph[vertex].keys())
+
+    def dfs_util(self, vertex, visited, vertex_list):
+        """A utility for depth first search
+
+        Args:
+            vertex: starting vertex
+            visited: marker for visited vertices
+            vertex_list: visited vertex
+
+        Returns:
+
+        Raises:
+            None
+        """
+        visited[vertex] = True
+        vertex_list.append(vertex)
+        for neighbor_vertex in self.graph[vertex].keys():
+            if not visited[neighbor_vertex]:
+                self.dfs_util(neighbor_vertex, visited, vertex_list)
 
     @staticmethod
     def depth_first_traversal(graph_node, vertex_list):
@@ -255,6 +287,25 @@ class DirectedGraph(Graph):
 
         return list(vertices)
 
+    def reverse(self):
+        """Reverse the graph
+
+        Args:
+
+        Returns:
+            Graph
+
+        Raises:
+            None
+        """
+        graph = DirectedGraph()
+        adjacency_list = self.get_adjacency_list()
+
+        for w, u, v in adjacency_list:
+            graph.add_edge(v, u, w)
+
+        return graph
+
 
 class UndirectedGraph(Graph):
     """
@@ -284,3 +335,16 @@ class UndirectedGraph(Graph):
             None
         """
         return list(self.graph.keys())
+
+    def reverse(self):
+        """Reverse the graph
+
+        Args:
+
+        Returns:
+            Graph
+
+        Raises:
+            None
+        """
+        return self
