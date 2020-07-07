@@ -81,8 +81,6 @@ class CheckArrayIsPreOrderBST(Problem):
             if value < root:
                 return False
 
-            # If we find a node who is on the right side
-            # and smaller than root, return False
             while len(value_stack) > 0 and value_stack.peek() < value:
                 root = value_stack.pop()
 
