@@ -123,6 +123,28 @@ class LinkedList:
         if previous_node is not None:
             previous_node.next_node = current_node.next_node
 
+    def reverse(self):
+        """Reverse a linked list
+
+        Args:
+
+        Return:
+            Node
+
+        Raises:
+            None
+        """
+        previous = None
+        current = self.head
+
+        while current is not None:
+            next_node = current.next_node
+            current.next_node = previous
+            previous = current
+            current = next_node
+
+        self.head = previous
+
     def output_list(self):
         """Outputs the linked list
 
