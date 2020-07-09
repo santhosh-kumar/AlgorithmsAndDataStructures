@@ -44,7 +44,8 @@ class RotateMatrix(Problem):
     def solve(self):
         """Solve the problem
 
-        Note:  O(n^2) runtime and O(1) (space)
+        Note: O(n^2) runtime and O(1) (space)
+              It works by replacing: (n,0) -> (0,0), (n,n) -> (n,0), (0, n) -> (n, n), (0, 0) -> (0, n)
 
         Args:
 
