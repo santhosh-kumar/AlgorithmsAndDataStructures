@@ -51,6 +51,11 @@ class BinaryTreeUpsideDown(Problem):
 
         Note: O(n) (runtime) and O(1) space complexity.
 
+            Reference: https://medium.com/@jimdaosui/binary-tree-upside-down-77af203c79af
+            1) If the current root has left child, make the left child right point to the current root.
+            2) If the current root has left child, make the left child left point to the current root.
+            3) Repeat the operations above until the current root does not have left child.
+
         Args:
 
         Returns:
@@ -61,16 +66,19 @@ class BinaryTreeUpsideDown(Problem):
         """
         print("Solving {} problem ...".format(self.PROBLEM_NAME))
 
-        node = self.root_node
-        parent = None
-        parent_right = None
+        previous_node = None
+        last_right_node = None
+        current_node = self.root_node
 
-        while node is not None:
-            left = node.left
-            node.left = parent_right
-            parent_right = node.right
-            node.right = parent
-            parent = node
-            node = left
+        # idea is similar to reversing a linked-list
+        while current_node is not None:
+            next_node = current_node.left
+            current_node.left = last_right_node
 
-        return parent
+            last_right_node = current_node.right
+            current_node.right = previous_node
+
+            previous_node = current_node
+            current_node = next_node
+
+        return previous_node

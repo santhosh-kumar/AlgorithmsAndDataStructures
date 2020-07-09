@@ -76,7 +76,7 @@ class CheckArrayIsPreOrderBST(Problem):
         root = -sys.maxsize
 
         for value in self.input_list:
-            # If we find a node who is on the right side
+            # If we find a node which is on the right side
             # and smaller than root, return False
             if value < root:
                 return False
