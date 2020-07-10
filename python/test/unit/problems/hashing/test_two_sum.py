@@ -3,7 +3,7 @@ Unit Test for two_sum
 """
 from unittest import TestCase
 
-from problems.array.two_sum import TwoSum
+from problems.hashing.two_sum import TwoSum
 
 
 class TestTwoSum(TestCase):
