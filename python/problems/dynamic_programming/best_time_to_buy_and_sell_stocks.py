@@ -56,7 +56,7 @@ class BestTimeToBuyAndSellStocks(Problem):
     def solve(self):
         """Solve the problem
 
-        Note:
+        Note: O(k * n^2) (runtime)
 
         Args:
 
