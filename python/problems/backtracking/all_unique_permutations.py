@@ -37,7 +37,8 @@ class AllUniquePermutations(Problem):
     def solve(self):
         """Solve the problem
 
-        Note:
+        Note: O(|V|+|E|) (runtime) because it's a tree structure.
+              Reference: https://medium.com/algorithms-and-leetcode/backtracking-e001561b9f28
 
         Args:
 
