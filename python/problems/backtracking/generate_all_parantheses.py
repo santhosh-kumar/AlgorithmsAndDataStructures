@@ -1,39 +1,26 @@
 """
-Generate Parantheses
+Generate All Parantheses
 
-Given a set of candidate numbers (C) and a target number (T), find all unique combinations in C where the candidate numbers sums to T.
+Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses of length 2*n.
 
-The same repeated number may be chosen from C unlimited number of times.
+For example, given n = 3, a solution set is:
 
-Note:
-All numbers (including target) will be positive integers.
-Elements in a combination (a1, a2, … , ak) must be in non-descending order. (ie, a1 ≤ a2 ≤ … ≤ ak).
-The combinations themselves must be sorted in ascending order.
-CombinationA > CombinationB iff (a1 > b1) OR (a1 = b1 AND a2 > b2) OR … (a1 = b1 AND a2 = b2 AND … ai = bi AND ai+1 > bi+1)
-The solution set must not contain duplicate combinations.
-
-Example,
-Given candidate set 2,3,6,7 and target 7,
-A solution set is:
-
-[2, 2, 3]
-[7]
+"((()))", "(()())", "(())()", "()(())", "()()()"
 """
 from common.problem import Problem
 
 
-class CombinationSum(Problem):
+class GenerateAllParantheses(Problem):
     """
-    CombinationSum
+    GenerateAllParantheses
     """
-    PROBLEM_NAME = "CombinationSum"
+    PROBLEM_NAME = "GenerateAllParantheses"
 
-    def __init__(self, input_list, target_sum):
-        """CombinationSum
+    def __init__(self, n):
+        """GenerateAllParantheses
 
         Args:
-            input_list: Contains a list of integers
-            target_sum: Target sum to add upto
+            n: number of parantheses
 
         Returns:
             None
@@ -42,8 +29,7 @@ class CombinationSum(Problem):
             None
         """
         super().__init__(self.PROBLEM_NAME)
-        self.input_list = input_list
-        self.target_sum = target_sum
+        self.n = n
 
     def solve(self):
         """Solve the problem
@@ -59,54 +45,37 @@ class CombinationSum(Problem):
             None
         """
         print("Solving {} problem ...".format(self.PROBLEM_NAME))
-
-        # remove duplicates
-        self.input_list = list(set(self.input_list))
-
-        # sort the array
-        self.input_list.sort()
-
         result = []
-        index = 0
-        current = []
-        self.find_numbers(result, current, self.target_sum, index)
+        current = ""
+        open = 0
+        close = 0
+        max = self.n
+
+        self.generate(result, current, open, close, max)
 
         return result
 
-    def find_numbers(self, result, current, current_sum, index):
-        """Find numbers that add up to the target sum
+    def generate(self, result, current, open, close, max):
+        """Generate n valid parantheses
 
         Args:
             result: collect all the valid solutions
             current: the current partial solution
-            current_sum: Currently computed sum
-            index: to start iterating
+            open: currently open count
+            close: currently closed count
+            max: max allowed parantheses
 
         Returns:
 
         Raises:
             None
         """
-        # If  current sum becomes negative
-        if current_sum < 0:
+        if len(current) == max * 2:
+            result.append(current)
             return
 
-        # If we get exact answer
-        if current_sum == 0:
-            result.append(current[::])
-            return
+        if open < max:
+            self.generate(result, current + "(", open + 1, close, max)
 
-        # Recur for all remaining elements that have value smaller than sum.
-        while index < len(self.input_list) and current_sum - self.input_list[index] >= 0:
-            # Till every element in the array starting from index which can contribute to the sum
-            current.append(self.input_list[index])
-
-            # recur for next numbers
-            self.find_numbers(result, current, current_sum - self.input_list[index], index)
-
-            index = index + 1
-
-            # remove number from list (backtracking)
-            current.pop()
-
-        return
+        if close < open:
+            self.generate(result, current + ")", open, close + 1, max)
